@@ -18,7 +18,7 @@ class ViewModelProviderFactory : ViewModelProvider.Factory {
         if (modelClass.isAssignableFrom(viewModel.javaClass)) {
             return viewModel as T
         } else {
-            return throw IllegalArgumentException("Unknown Class Name")
+            return throw IllegalArgumentException("Unknown Class Name") as Throwable
         }
     }
 }
