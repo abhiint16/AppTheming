@@ -2,7 +2,7 @@
           package="com.example.mvvmsamplekotlin">
 
     <application android:allowBackup="true"
-                 android:name=".MVVMSample"
+                 android:name=".MVVMSampleApp"
                  android:label="@string/app_name"
                  android:icon="@mipmap/ic_launcher"
                  android:roundIcon="@mipmap/ic_launcher_round"

@@ -4,6 +4,8 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+apply plugin: 'kotlin-kapt'
+
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.0"
@@ -21,6 +23,28 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    flavorDimensions "default"
+    productFlavors {
+        local {
+            versionNameSuffix ".local"
+            buildConfigField 'String', 'BASE_URL', '"http://yourdomain.com"'
+        }
+
+        dev {
+            versionNameSuffix ".dev"
+            buildConfigField 'String', 'BASE_URL', '"http://yourdomain.com"'
+        }
+
+        staging {
+            versionNameSuffix ".stage"
+            buildConfigField 'String', 'BASE_URL', '"https://yourdomain.com"'
+        }
+
+        prod {
+            versionNameSuffix ".prod"
+            buildConfigField 'String', 'BASE_URL', '"https://yourdomain.com"'
+        }
+    }
 }
 
 dependencies {
@@ -35,8 +59,8 @@ dependencies {
     // Dagger 2
     implementation "com.google.dagger:dagger:2.14.1"
     implementation "com.google.dagger:dagger-android-support:2.14.1"
-    annotationProcessor "com.google.dagger:dagger-compiler:2.14.1"
-    annotationProcessor "com.google.dagger:dagger-android-processor:2.14.1"
+    kapt "com.google.dagger:dagger-compiler:2.14.1"
+    kapt "com.google.dagger:dagger-android-processor:2.14.1"
 
     // Android Architecture Components
     implementation "androidx.lifecycle:lifecycle-extensions:2.0.0"
