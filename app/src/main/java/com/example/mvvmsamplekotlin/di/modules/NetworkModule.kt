@@ -16,6 +16,7 @@ class NetworkModule {
 
 
     @Provides
+    @BaseUrl
     fun providesBaseUrl(): String {
         return BuildConfig.BASE_URL
     }

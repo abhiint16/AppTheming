@@ -14,6 +14,7 @@ import com.example.mvvmsamplekotlin.di.qualifier.PreferenceName
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit
+import javax.inject.Singleton
 
 @Module
 class AppModule {
@@ -25,20 +26,21 @@ class AppModule {
     }
 
     @Provides
+    @Singleton
     fun providesApiHelper(apiHelper: ApiHelperImpl):
-            ApiHelperImpl {
+            ApiHelper {
         return apiHelper
     }
 
     @Provides
     fun providesDBHelper(dbHelper: DBHelperImpl):
-            DBHelperImpl {
+            DBHelper {
         return dbHelper
     }
 
     @Provides
     fun providesPrefHelper(preferenceHelper: PreferenceHelperImpl):
-            PreferenceHelperImpl {
+            PreferenceHelper {
         return preferenceHelper
     }
 
@@ -49,7 +51,7 @@ class AppModule {
 
     @Provides
     @PreferenceName
-    fun providesSharedPrefName(): String{
+    fun providesSharedPrefName(): String {
         return AppConstants.SHARED_PREFERENCE_NAME;
     }
 }

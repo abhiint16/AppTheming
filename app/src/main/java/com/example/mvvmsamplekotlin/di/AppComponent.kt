@@ -2,6 +2,7 @@ package com.example.mvvmsamplekotlin.di
 
 import android.app.Application
 import com.example.mvvmsamplekotlin.MVVMSampleApp
+import com.example.mvvmsamplekotlin.di.builder.ViewBuilderProvider
 import com.example.mvvmsamplekotlin.di.modules.AppModule
 import com.example.mvvmsamplekotlin.di.modules.ContextModule
 import com.example.mvvmsamplekotlin.di.modules.NetworkModule
@@ -13,7 +14,7 @@ import javax.inject.Singleton
 @Singleton
 @Component(
     modules = [AppModule::class, ContextModule::class, NetworkModule::class,
-        AndroidInjectionModule::class]
+        AndroidInjectionModule::class, ViewBuilderProvider::class]
 )
 interface AppComponent {
 
