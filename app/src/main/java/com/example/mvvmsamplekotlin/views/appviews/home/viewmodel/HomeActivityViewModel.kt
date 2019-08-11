@@ -1,4 +1,4 @@
-package com.example.mvvmsamplekotlin.views.viewmodel
+package com.example.mvvmsamplekotlin.views.appviews.home.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

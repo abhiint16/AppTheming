@@ -1,4 +1,4 @@
-package com.example.mvvmsamplekotlin.views
+package com.example.mvvmsamplekotlin.views.appviews.home
 
 import android.os.Bundle
 import android.widget.Toast
@@ -9,7 +9,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.example.mvvmsamplekotlin.R
 import com.example.mvvmsamplekotlin.databinding.ActivityHomeBinding
-import com.example.mvvmsamplekotlin.views.viewmodel.HomeActivityViewModel
+import com.example.mvvmsamplekotlin.views.appviews.home.viewmodel.HomeActivityViewModel
 import dagger.android.AndroidInjection
 import javax.inject.Inject
 

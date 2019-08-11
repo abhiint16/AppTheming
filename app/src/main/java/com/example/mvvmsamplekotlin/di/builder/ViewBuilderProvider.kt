@@ -1,7 +1,7 @@
 package com.example.mvvmsamplekotlin.di.builder
 
-import com.example.mvvmsamplekotlin.views.HomeActivity
-import com.example.mvvmsamplekotlin.views.di.HomeActivityModule
+import com.example.mvvmsamplekotlin.views.appviews.home.HomeActivity
+import com.example.mvvmsamplekotlin.views.appviews.home.di.HomeActivityModule
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
