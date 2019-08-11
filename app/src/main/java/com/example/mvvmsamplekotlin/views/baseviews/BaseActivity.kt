@@ -6,6 +6,7 @@ import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import dagger.android.AndroidInjection
 
@@ -28,7 +29,8 @@ abstract class BaseActivity<Binding : ViewDataBinding, VM : BaseViewModel> : App
         super.onCreate(savedInstanceState)
         setDependencyInjection()
         setBinding()
-        setViewModel()
+        viewModel = setViewModel() as VM
+        baseViewModelObserver()
         initObserver()
         setUp()
     }
@@ -39,6 +41,15 @@ abstract class BaseActivity<Binding : ViewDataBinding, VM : BaseViewModel> : App
 
     private fun setDependencyInjection() {
         AndroidInjection.inject(this)
+    }
+
+    private fun baseViewModelObserver() {
+        viewModel.observeForDialog().observe(this, Observer {
+            if (it)
+                showLoading()
+            else
+                hideLoading()
+        })
     }
 
     protected fun showToast(toastMsg: String) {
