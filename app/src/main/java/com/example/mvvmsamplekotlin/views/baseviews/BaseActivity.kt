@@ -8,6 +8,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
+import com.example.mvvmsamplekotlin.views.viewutil.LoadingDialog
 import dagger.android.AndroidInjection
 
 abstract class BaseActivity<Binding : ViewDataBinding, VM : BaseViewModel> : AppCompatActivity() {
@@ -17,6 +18,8 @@ abstract class BaseActivity<Binding : ViewDataBinding, VM : BaseViewModel> : App
     lateinit var binding: Binding
 
     abstract fun setViewModel(): ViewModel
+
+    lateinit var dialog: LoadingDialog
 
     @get:LayoutRes
     abstract val layout: Int
@@ -57,11 +60,13 @@ abstract class BaseActivity<Binding : ViewDataBinding, VM : BaseViewModel> : App
     }
 
     protected fun showLoading() {
-
+        dialog = LoadingDialog(this@BaseActivity)
+        dialog.show()
     }
 
     protected fun hideLoading() {
-
+        if (dialog.isShowing)
+            dialog.dismiss()
     }
 
 }
