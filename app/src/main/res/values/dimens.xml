@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="dimen_20">20dp</dimen>
+
+
+    <dimen name="h1_textsize">20sp</dimen>
+    <dimen name="h2_textsize">16dp</dimen>
+    <dimen name="h3_textsize">12dp</dimen>
+    <dimen name="h5_textsize">8dp</dimen>
 </resources>

@@ -1,4 +1,4 @@
 package com.example.mvvmsamplekotlin.views
 
-object ViewCons {
-}
+
+var themeType = "LIGHT"

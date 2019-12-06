@@ -8,6 +8,8 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
+import com.example.mvvmsamplekotlin.R
+import com.example.mvvmsamplekotlin.views.themeType
 import com.example.mvvmsamplekotlin.views.viewutil.LoadingDialog
 import dagger.android.AndroidInjection
 
@@ -24,6 +26,8 @@ abstract class BaseActivity<Binding : ViewDataBinding, VM : BaseViewModel> : App
     @get:LayoutRes
     abstract val layout: Int
 
+    //lateinit var themeType: String
+
     abstract fun initObserver()
 
     abstract fun setUp()
@@ -31,6 +35,13 @@ abstract class BaseActivity<Binding : ViewDataBinding, VM : BaseViewModel> : App
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setDependencyInjection()
+
+        if (themeType.equals("LIGHT")) {
+            setTheme(R.style.AppTheme_LightTheme)
+        } else if (themeType.equals("DARK")) {
+            setTheme(R.style.AppTheme_DarkTheme)
+        }
+
         setBinding()
         viewModel = setViewModel() as VM
         baseViewModelObserver()

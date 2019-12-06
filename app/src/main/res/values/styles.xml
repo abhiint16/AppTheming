@@ -1,11 +1,29 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">?colorPrimary</item>
+        <item name="colorPrimaryDark">?colorPrimaryDark</item>
+        <item name="colorAccent">?colorAccent</item>
+        <item name="button_textsize">?button_textsize</item>
+    </style>
+
+
+    <style name="AppTheme.LightTheme">
+        <item name="colorPrimary">@color/colorPrimaryForLightTheme</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkForLightTheme</item>
+        <item name="colorAccent">@color/colorAccentForLightTheme</item>
+        <item name="android:textColorPrimary">@color/headerTextColorForLightTheme</item>
+        <item name="button_textsize">@dimen/h1_textsize</item>
+    </style>
+
+    <style name="AppTheme.DarkTheme">
+        <item name="colorPrimary">@color/colorPrimaryForDarkTheme</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkForDarkTheme</item>
+        <item name="colorAccent">@color/colorAccentForDarkTheme</item>
+        <item name="android:textColorPrimary">@color/headerTextColorForDarkTheme</item>
+        <item name="button_textsize">@dimen/h3_textsize</item>
     </style>
 
 </resources>
